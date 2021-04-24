@@ -3,12 +3,16 @@ module that utilizes haveibeenpwned to give lists of compromised passwords
 """
 import private_functions as priv
 import errors as err
+import numbers
+
+PASS_MIN_LEN = 10
 
 URL = "https://api.pwnedpasswords.com/range/"
 PARAMETERS = {"user-agent":"wrac_password_checker"}
 
 def compromised_passwords(passwords):
     '''returns a list of compromised passwords from a list of passwords to test'''
+    #bad input testing
     if len(passwords) <= 0:
         raise err.ArgsTooSmallError("passwords to check should be longer")
 
@@ -31,5 +35,30 @@ def compromised_passwords(passwords):
     return compromised
 
 
-def password_generator(length, amount):
+def password_generator(length, amount=1):
     '''generates amount passwords of a given character length'''
+
+    #bad input testing
+    #types
+
+    try:
+        length = int(length)
+    except:
+        raise err.ValueNotInt("Expected int for length")
+
+    try:
+        amount = int(amount)
+    except:
+        raise err.ValueNotInt("Expected int for amount")
+
+    #length
+    if length <= PASS_MIN_LEN:
+        raise err.ArgsTooSmallError("password length should be greater than 10")
+    if amount <= 0:
+        raise err.ArgsTooSmallError("password to generate shoult not be 0")
+
+    return_passes = []
+    for _ in range(amount):
+        return_passes.append(priv.genpass(length))
+
+    return return_passes

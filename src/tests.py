@@ -27,6 +27,7 @@ def test_all():
     failed_count = 0
     failed_count += comprimised_pass()
     print("{} failiures".format(failed_count))
+    print(wrac.password_generator("10", 4))
 
 if __name__ == "__main__":
     test_all()

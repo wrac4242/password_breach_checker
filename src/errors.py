@@ -17,3 +17,7 @@ class ValueTooSmallError(Error):
 class ValueTooLargeError(Error):
     """Raised when the input value is too large"""
     pass
+
+class ValueNotInt(Error):
+    """Raised when the input value is too large"""
+    pass
