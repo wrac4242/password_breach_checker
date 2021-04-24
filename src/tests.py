@@ -21,3 +21,12 @@ def comprimised_pass():
     except:
         pass
     return failed
+
+def test_all():
+    '''test using all test cases'''
+    failed_count = 0
+    failed_count += comprimised_pass()
+    print("{} failiures".format(failed_count))
+
+if __name__ == "__main__":
+    test_all()
