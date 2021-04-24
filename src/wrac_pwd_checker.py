@@ -21,7 +21,7 @@ def _make_requests(hash_5):
     return returning
 
 def compromised_passwords(passwords):
-	'''returns a list of compromised passwords from a list of passwords to test'''
+    '''returns a list of compromised passwords from a list of passwords to test'''
     hash_list = []
     to_send = []
     for i in passwords:
