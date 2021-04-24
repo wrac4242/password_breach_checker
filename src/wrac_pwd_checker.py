@@ -4,6 +4,8 @@ module that utilizes haveibeenpwned to give lists of compromised passwords
 import private_functions as priv
 import errors as err
 
+# noqa: E722
+
 PASS_MIN_LEN = 10
 
 URL = "https://api.pwnedpasswords.com/range/"
