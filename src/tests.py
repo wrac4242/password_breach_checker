@@ -1,6 +1,6 @@
 '''testing functions'''
 import wrac_pwd_checker as wrac
-# pylint: disable=W0702
+# pylint: disable=bare-except
 
 #returns amount failed
 def comprimised_pass():
@@ -26,6 +26,7 @@ def comprimised_pass():
         pass
     return failed
 
+
 def pass_gen():
     '''password generator testing'''
     failed = 0
@@ -50,20 +51,20 @@ def pass_gen():
         wrac.password_generator("15")
     except:
         print("amount given required, should not")
-        failed +=1
+        failed += 1
 
     #test input sterilisation
     try:
         wrac.password_generator("a")
         print("Length not sterilised")
-        failed +=1
+        failed += 1
     except:
         pass
 
     try:
         wrac.password_generator(10, "a")
         print("amount not sterilised")
-        failed +=1
+        failed += 1
     except:
         pass
 
@@ -71,11 +72,12 @@ def pass_gen():
     try:
         wrac.password_generator(1)
         print("Minimum length failed")
-        failed +=1
+        failed += 1
     except:
         pass
 
     return failed
+
 
 def test_all():
     '''test using all test cases'''
@@ -83,6 +85,7 @@ def test_all():
     failed_count += comprimised_pass()
     failed_count += pass_gen()
     print("{} failiures".format(failed_count))
+
 
 if __name__ == "__main__":
     test_all()

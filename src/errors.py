@@ -1,5 +1,5 @@
 '''error classes'''
-# pylint: disable=W0107
+# pylint: disable=unnecessary-pass
 
 class Error(Exception):
     """Base class for other exceptions"""
