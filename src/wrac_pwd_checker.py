@@ -34,6 +34,7 @@ def compromised_passwords(passwords):
         recived.extend(_make_requests(i))
     compromised = []
     #check if hashes are in list
+    # pylint: disable=C0200
     for i in range(len(hash_list)):
         if hash_list[i].upper()[5:] in recived:
             compromised.append(passwords[i])
