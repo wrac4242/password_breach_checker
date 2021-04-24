@@ -37,6 +37,4 @@ def compromised_passwords(passwords):
     for i in range(len(hash_list)):
         if hash_list[i].upper()[5:] in recived:
             compromised.append(passwords[i])
-            print("Hash:", hash_list[i], "found")
-            print("password:", passwords[i],"found, please regen")
     return compromised
