@@ -5,6 +5,7 @@ import private_functions as priv
 import errors as err
 
 # noqa: E722
+# pylint: disable=bare-except
 
 PASS_MIN_LEN = 10
 
