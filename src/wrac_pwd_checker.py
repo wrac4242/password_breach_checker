@@ -2,12 +2,16 @@
 module that utilizes haveibeenpwned to give lists of compromised passwords
 """
 import private_functions as priv
+import errors as err
 
 URL = "https://api.pwnedpasswords.com/range/"
 PARAMETERS = {"user-agent":"wrac_password_checker"}
 
 def compromised_passwords(passwords):
     '''returns a list of compromised passwords from a list of passwords to test'''
+    if len(passwords) <= 0:
+        raise err.ArgsTooSmallError("passwords to check should be longer")
+
     hash_list = []
     to_send = []
     for i in passwords:
@@ -25,3 +29,7 @@ def compromised_passwords(passwords):
         if hash_list[i].upper()[5:] in recived:
             compromised.append(passwords[i])
     return compromised
+
+
+def password_generator(length, amount):
+    '''generates amount passwords of a given character length'''

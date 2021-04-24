@@ -1,5 +1,6 @@
 '''private functions'''
 from hashlib import sha1
+import random
 import requests
 
 #credit where credit is due https://gist.github.com/re4lfl0w/a6ff3a988b4e67297efc
