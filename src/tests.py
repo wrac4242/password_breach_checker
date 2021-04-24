@@ -1,6 +1,6 @@
 '''testing functions'''
 import wrac_pwd_checker as wrac
-# pylint: disable=bare-except
+# noqa: E722
 
 #returns amount failed
 def comprimised_pass():

@@ -42,7 +42,7 @@ def password_generator(length, amount=1):
     #bad input testing
     #types
 
-    # pylint: disable=raise-missing-from
+    # pylint: disable=W0707
     try:
         length = int(length)
     except:
