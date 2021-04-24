@@ -1,6 +1,5 @@
 '''private functions'''
 from hashlib import sha1
-import random #used for testing
 import secrets
 import requests
 
@@ -22,4 +21,5 @@ def make_requests(hash_5, url, parameters):
 
 def genpass(length):
     '''generates password'''
-    return secrets.token_urlsafe(int(length//1.3+1))
+    generate = int(length//1.3 + 5)
+    return secrets.token_urlsafe(generate)[:length]

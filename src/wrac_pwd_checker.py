@@ -3,7 +3,6 @@ module that utilizes haveibeenpwned to give lists of compromised passwords
 """
 import private_functions as priv
 import errors as err
-import numbers
 
 PASS_MIN_LEN = 10
 
@@ -41,6 +40,7 @@ def password_generator(length, amount=1):
     #bad input testing
     #types
 
+    # pylint: disable=W0707
     try:
         length = int(length)
     except:
