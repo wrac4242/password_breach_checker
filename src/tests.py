@@ -24,7 +24,7 @@ def comprimised_pass():
         print("Comprimised passwords failed at 0 len input")
         failed += 1
     except:  # noqa
-        pass
+        pass  # noqa
     return failed
 
 
@@ -60,14 +60,14 @@ def pass_gen():
         print("Length not sterilised")
         failed += 1
     except:  # noqa
-        pass
+        pass  # noqa
 
     try:
         wrac.password_generator(10, "a")
         print("amount not sterilised")
         failed += 1
     except:  # noqa
-        pass
+        pass  # noqa
 
     #check minimum length
     try:
@@ -75,7 +75,7 @@ def pass_gen():
         print("Minimum length failed")
         failed += 1
     except:  # noqa
-        pass
+        pass  # noqa
 
     return failed
 
