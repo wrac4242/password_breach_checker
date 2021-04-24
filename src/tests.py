@@ -1,7 +1,7 @@
 '''testing functions'''
 import wrac_pwd_checker as wrac
 # noqa: E722
-# pylint: disable=W0702
+# pylint: disable=bare-except
 
 #returns amount failed
 def comprimised_pass():
@@ -14,7 +14,7 @@ def comprimised_pass():
         if len(wrac.compromised_passwords(passwds)) != 2:
             print("Comprimised password base test failed")
             failed += 1
-    except:
+    except:  # noqa
         print("comprimised password error")
         failed += 1
 
@@ -23,7 +23,7 @@ def comprimised_pass():
         wrac.compromised_passwords([])
         print("Comprimised passwords failed at 0 len input")
         failed += 1
-    except:
+    except:  # noqa
         pass
     return failed
 
@@ -44,13 +44,13 @@ def pass_gen():
             if len(i) != length:
                 print("password length not equal")
                 failed += 1
-    except:
+    except:  # noqa
         failed += 1
 
     #test if amount is not required
     try:
         wrac.password_generator("15")
-    except:
+    except:  # noqa
         print("amount given required, should not")
         failed += 1
 
@@ -59,14 +59,14 @@ def pass_gen():
         wrac.password_generator("a")
         print("Length not sterilised")
         failed += 1
-    except:
+    except:  # noqa
         pass
 
     try:
         wrac.password_generator(10, "a")
         print("amount not sterilised")
         failed += 1
-    except:
+    except:  # noqa
         pass
 
     #check minimum length
@@ -74,7 +74,7 @@ def pass_gen():
         wrac.password_generator(1)
         print("Minimum length failed")
         failed += 1
-    except:
+    except:  # noqa
         pass
 
     return failed
